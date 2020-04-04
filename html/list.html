@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+    />
+
+</head>
+<body>
+<div class="container">
+
+    <div class="row">
+            <h1>Dashboard</h1>
+    </div>
+    <hr/>
+
+    <div class="d-flex justify-content-between">
+        <div>
+            <a type="button" href="/postAdd"  class="btn btn-primary ">Add Post</a>
+            <a type="button" href="/postList"  class="btn btn-primary">Refresh</a>
+        </div>
+        <div >
+            <a type="button"   class="btn btn-warning">{{.User}}</a>
+            <a type="button" href="/logout"  class="btn btn-danger">Logout</a>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-md-12">
+            {{range .PostList}}
+                <div>
+                    <div class="row">
+                        <div class="col-sm-10"><h3>{{.PostHeader}}</h3></div>
+                        <div class="col-sm-2">
+                    <button type="button" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#dialog{{.ID}}">
+                            Details
+                        </button>
+                        </div>
+                    </div>
+
+                    <p>{{.PostContent}}</p>
+
+
+
+                    <hr>
+                    <!-- The Modal -->
+                    <div class="modal" id="dialog{{.ID}}">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">{{.PostHeader}}</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <p>{{.PostContent}}</p>
+                                    <span>Create Date:</span> <span>{{.PostDateStr}}</span>
+                                    <br/>
+                                    <span>Create User:</span> <span>{{.PostUser}}</span>
+                                </div>
+
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{end}}
+        </div>
+    </div>
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"
+></script>
+</body>
+</html>
