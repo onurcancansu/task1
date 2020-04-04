@@ -1,4 +1,5 @@
 docker build -t task1image .
+<br>
 docker run -p 8080:8080 -it --rm --name Task1 task1image
 
 Yukarıda bulunan iki satır kodu Dockerfile'ın bulunduğu dosya yolunda çalıştırmanız yeterlidir.
