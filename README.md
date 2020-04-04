@@ -10,6 +10,7 @@ http://localhost:8080/login adresinde gidebilirsiniz.
 Test kullanıcıları
 
 onurcan.cansu@boun.edu.tr  123
+<br>
 demo@demo.com		       123
 
 
@@ -17,8 +18,11 @@ demo@demo.com		       123
 Referanslar
 
 https://www.golangprograms.com/example-to-handle-get-and-post-request-in-golang.html
+<br>
 https://www.youtube.com/watch?v=YpDVQC8hfik
+<br>
 https://gobyexample.com/hello-world
+<br>
 https://www.thepolyglotdeveloper.com/2017/04/using-sqlite-database-golang-application/
 https://blog.golang.org/maps
 https://startbootstrap.com/snippets/login/
